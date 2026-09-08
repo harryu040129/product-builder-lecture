@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>page.note — 나만의 책 이야기</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="#top" aria-label="page.note 홈"><span>page</span><i></i><span>note</span></a>
+    <nav class="nav-links" aria-label="주 메뉴">
+      <a class="active" href="#reviews">둘러보기</a><a href="#shelf">내 서재</a><a href="#community">커뮤니티</a>
+    </nav>
+    <div class="header-actions">
+      <button class="search-button" id="searchButton" aria-label="검색 열기">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg>
+      </button>
+      <button class="avatar" aria-label="내 프로필">J</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">A QUIET PLACE FOR LOUD THOUGHTS</p>
+        <h1>책을 덮은 뒤,<br><em>남는 이야기들.</em></h1>
+        <p class="hero-description">마음에 오래 머문 문장과 생각을 기록하고,<br class="desktop-only"> 같은 책을 읽은 사람들과 나누어 보세요.</p>
+        <a class="button primary" href="#write"><span>독후감 쓰기</span><b>→</b></a>
+      </div>
+      <div class="hero-art" aria-label="책과 꽃 일러스트">
+        <div class="sun"></div><div class="arch arch-one"></div><div class="arch arch-two"></div>
+        <div class="book book-back"></div><div class="book book-front"><span>the<br>little<br>things</span></div>
+        <div class="flower flower-one"><i></i><i></i><i></i><i></i><b></b></div>
+        <div class="flower flower-two"><i></i><i></i><i></i><i></i><b></b></div>
+        <div class="stem stem-one"></div><div class="stem stem-two"></div>
+      </div>
+      <p class="scroll-hint">SCROLL TO EXPLORE <span>↓</span></p>
+    </section>
+
+    <section class="featured" id="shelf">
+      <div class="section-heading"><div><p class="eyebrow">EDITOR'S PICK</p><h2>이번 주, 함께 읽어요</h2></div><a href="#reviews">더 많은 책 보기 <span>→</span></a></div>
+      <article class="featured-book">
+        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=700&q=85" alt="책이 놓인 테이블" />
+        <div class="featured-content">
+          <span class="pill">이달의 책</span><p class="author">클레어 키건 지음 · 다산책방</p>
+          <h3>맡겨진 소녀</h3>
+          <div class="rating-line"><span class="stars">★★★★★</span><strong>4.8</strong><span>(2,461명의 독자)</span></div>
+          <p>“작고 고요한 이야기 안에 담긴 커다란 사랑.”<br>짧지만 깊은 여운으로 마음을 어루만지는 한 소녀의 여름.</p>
+          <button class="text-button" data-book="맡겨진 소녀">이 책에 감상 남기기 <span>↗</span></button>
+        </div>
+        <div class="quote-mark">“</div>
+      </article>
+    </section>
+
+    <section class="reviews-section" id="reviews">
+      <div class="section-heading"><div><p class="eyebrow">FRESH FROM THE SHELF</p><h2>새로 도착한 감상</h2></div><div class="filter-buttons" role="group" aria-label="감상 필터"><button class="filter active" data-filter="all">전체</button><button class="filter" data-filter="5">별점 높은 순</button><button class="filter" data-filter="recent">최신순</button></div></div>
+      <div class="review-grid" id="reviewGrid"></div>
+    </section>
+
+    <section class="write-section" id="write">
+      <div class="write-intro"><p class="eyebrow">YOUR NEXT PAGE</p><h2>오늘 읽은 책은<br><em>어떤 마음으로 남았나요?</em></h2><p>완벽한 문장일 필요 없어요. 한 줄의 감상도 충분히 당신만의 책 이야기가 됩니다.</p><div class="mini-quote">“ 읽는다는 건 타인의 경험을 통해<br>나를 더 깊이 이해하는 일. ”</div></div>
+      <form class="review-form" id="reviewForm">
+        <label>읽은 책 <input id="bookTitle" type="text" placeholder="책 제목을 입력하세요" required /></label>
+        <label>나의 별점 <span class="form-stars" id="starPicker" role="radiogroup" aria-label="별점"><button type="button" data-score="1">★</button><button type="button" data-score="2">★</button><button type="button" data-score="3">★</button><button type="button" data-score="4">★</button><button type="button" data-score="5">★</button><small id="ratingText">별점을 선택해 주세요</small></span></label>
+        <label>감상 <textarea id="reviewText" rows="4" placeholder="책을 읽고 떠오른 생각을 적어 보세요." required></textarea></label>
+        <button class="button dark" type="submit">감상 기록하기 <span>→</span></button>
+      </form>
+    </section>
+  </main>
+  <footer><a class="logo" href="#top"><span>page</span><i></i><span>note</span></a><p>Read slowly, live deeply.</p><p>© 2024 PAGE.NOTE</p></footer>
+  <div class="toast" id="toast" role="status">감상이 서재에 기록되었어요.</div>
+  <div class="search-overlay" id="searchOverlay" aria-hidden="true"><button class="close-search" id="closeSearch" aria-label="검색 닫기">×</button><div><p class="eyebrow">FIND YOUR NEXT READ</p><input id="searchInput" type="search" placeholder="찾고 싶은 책이나 작가를 검색해 보세요" /><p>인기 검색어 · 맡겨진 소녀 · 모순 · 데미안</p></div></div>
+  <script src="script.js"></script>
+</body>
+</html>
