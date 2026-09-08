@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>모든 감상 — page.note</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html" aria-label="page.note 홈"><span>page</span><i></i><span>note</span></a>
+    <nav class="nav-links" aria-label="주 메뉴"><a class="active" href="reviews.html">둘러보기</a><a href="index.html#shelf">내 서재</a><a href="index.html#community">커뮤니티</a></nav>
+    <div class="header-actions"><a class="button primary" href="index.html#write">감상 쓰기 <b>→</b></a></div>
+  </header>
+  <main class="all-reviews-page">
+    <a class="back-link" href="index.html#reviews">← 메인으로 돌아가기</a>
+    <section aria-labelledby="allReviewsTitle">
+      <div class="reviews-page-heading"><p class="eyebrow">EVERY PAGE, EVERY THOUGHT</p><h1 id="allReviewsTitle">모두의 <em>책 이야기</em></h1><p>page.note에 남겨진 감상을 한곳에서 읽고, 책에 대한 이야기를 이어가 보세요.</p></div>
+      <div class="review-grid all-reviews-grid" id="allReviewsGrid"></div>
+    </section>
+    <section class="comments-section" aria-labelledby="commentsTitle">
+      <p class="eyebrow">JOIN THE CONVERSATION</p>
+      <h2 id="commentsTitle">감상에 댓글 남기기</h2>
+      <p>책을 읽으며 떠오른 생각을 자유롭게 나눠 주세요.</p>
+      <div id="disqus_thread"></div>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+  </main>
+  <footer><a class="logo" href="index.html"><span>page</span><i></i><span>note</span></a><p>Read slowly, live deeply.</p><p>© 2024 PAGE.NOTE</p></footer>
+  <script src="reviews.js"></script>
+  <script>
+    var disqus_config = function () {
+      this.page.url = window.location.href.split('#')[0];
+      this.page.identifier = 'page-note-all-reviews';
+    };
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://productbuilder-xcgzswnvsg.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+</body>
+</html>
