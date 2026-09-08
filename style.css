@@ -549,6 +549,73 @@ body {
   color: white;
   margin-top: 8px;
 }
+.feedback-section {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 11%;
+  padding: 100px max(10vw, 65px);
+  background: #f0ecdf;
+}
+.feedback-copy h2 {
+  font: 46px/1.08 "DM Serif Display", "Noto Serif KR", serif;
+  letter-spacing: -2px;
+  margin: 0;
+}
+.feedback-copy h2 em {
+  color: var(--orange);
+}
+.feedback-copy > p:not(.eyebrow) {
+  max-width: 390px;
+  margin: 24px 0 0;
+  color: #65685f;
+  font: 13px/1.9 "Noto Sans KR", sans-serif;
+}
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 34px 38px;
+  background: #fffdf8;
+  box-shadow: 8px 8px 0 #d9d4c5;
+}
+.feedback-form label {
+  color: #555a50;
+  font-size: 11px;
+  font-weight: 800;
+}
+.feedback-form label small {
+  color: #96978f;
+  font-weight: 500;
+}
+.feedback-form input:not([type="hidden"]),
+.feedback-form textarea,
+.feedback-form select {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  padding: 11px 0;
+  border: 0;
+  border-bottom: 1px solid #cbc7ba;
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink);
+  font: 13px "Noto Sans KR", sans-serif;
+  outline: none;
+}
+.feedback-form textarea { resize: vertical; }
+.feedback-form select { cursor: pointer; }
+.feedback-form input:focus,
+.feedback-form textarea:focus,
+.feedback-form select:focus { border-color: var(--orange); }
+.feedback-submit {
+  align-self: flex-start;
+  margin-top: 4px;
+  background: var(--ink);
+  color: #fff;
+}
+.feedback-submit:disabled { cursor: wait; opacity: 0.65; }
+.feedback-status { min-height: 18px; margin: -5px 0 0; color: #687762; font: 11px "Noto Sans KR", sans-serif; }
+.feedback-status.error { color: #bd5635; }
 footer {
   min-height: 120px;
   padding: 35px max(5vw, 42px);
@@ -755,6 +822,13 @@ footer p {
     padding: 70px 28px;
     gap: 55px;
   }
+  .feedback-section {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 70px 28px;
+  }
+  .feedback-copy h2 { font-size: 39px; }
+  .feedback-form { padding: 28px 24px; }
   .write-intro h2 {
     font-size: 39px;
   }

@@ -72,6 +72,21 @@
         <button class="button dark" type="submit"><span data-i18n="saveReview">감상 기록하기</span> <span>→</span></button>
       </form>
     </section>
+    <section class="feedback-section" id="community" aria-labelledby="feedbackTitle">
+      <div class="feedback-copy">
+        <p class="eyebrow">HELP US TURN THE PAGE</p>
+        <h2 id="feedbackTitle" data-i18n="feedbackTitle">page.note를<br><em>더 좋게 만들어 주세요.</em></h2>
+        <p data-i18n="feedbackDescription">불편했던 점, 더 보고 싶은 기능, 바라는 변화가 있다면 들려주세요. 작은 의견도 다음 페이지를 만드는 데 큰 도움이 됩니다.</p>
+      </div>
+      <form class="feedback-form" id="feedbackForm" action="https://formspree.io/f/mljeonzp" method="POST">
+        <label><span data-i18n="feedbackEmailLabel">이메일 <small>(선택)</small></span><input type="email" name="email" autocomplete="email" placeholder="답변을 받고 싶다면 이메일을 남겨 주세요" data-i18n-placeholder="feedbackEmailPlaceholder" /></label>
+        <label><span data-i18n="feedbackTypeLabel">어떤 의견인가요?</span><select name="topic" required aria-label="의견 유형" data-i18n-aria="feedbackTypeLabel"><option value="" disabled selected data-i18n="feedbackTypePlaceholder">의견 유형을 선택해 주세요</option><option value="improvement" data-i18n="feedbackTypeImprove">개선했으면 하는 점</option><option value="missing" data-i18n="feedbackTypeMissing">추가되었으면 하는 기능</option><option value="issue" data-i18n="feedbackTypeIssue">불편하거나 잘 작동하지 않는 점</option><option value="other" data-i18n="feedbackTypeOther">그 외 의견</option></select></label>
+        <label><span data-i18n="feedbackMessageLabel">의견</span><textarea name="message" rows="5" required placeholder="무엇을 더 좋게 만들 수 있을지 자유롭게 적어 주세요." data-i18n-placeholder="feedbackMessagePlaceholder"></textarea></label>
+        <input type="hidden" name="_subject" value="New page.note website recommendation" />
+        <button class="button feedback-submit" type="submit"><span data-i18n="feedbackSubmit">의견 보내기</span> <span>→</span></button>
+        <p class="feedback-status" id="feedbackStatus" role="status" aria-live="polite"></p>
+      </form>
+    </section>
   </main>
   <footer><a class="logo" href="#top"><span>page</span><i></i><span>note</span></a><p>Read slowly, live deeply.</p><p>© 2024 PAGE.NOTE</p></footer>
   <div class="toast" id="toast" role="status">감상이 서재에 기록되었어요.</div>
