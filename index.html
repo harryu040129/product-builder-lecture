@@ -75,7 +75,7 @@
   </main>
   <footer><a class="logo" href="#top"><span>page</span><i></i><span>note</span></a><p>Read slowly, live deeply.</p><p>© 2024 PAGE.NOTE</p></footer>
   <div class="toast" id="toast" role="status">감상이 서재에 기록되었어요.</div>
-  <div class="search-overlay" id="searchOverlay" aria-hidden="true"><button class="close-search" id="closeSearch" aria-label="검색 닫기" data-i18n-aria="closeSearch">×</button><div><p class="eyebrow">FIND YOUR NEXT READ</p><input id="searchInput" type="search" placeholder="찾고 싶은 책이나 작가를 검색해 보세요" data-i18n-placeholder="searchPlaceholder" /><p data-i18n="popularSearches">인기 검색어 · 맡겨진 소녀 · 모순 · 데미안</p></div></div>
+  <div class="search-overlay" id="searchOverlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="searchHeading"><button class="close-search" id="closeSearch" aria-label="검색 닫기" data-i18n-aria="closeSearch">×</button><div><p class="eyebrow" id="searchHeading">FIND YOUR NEXT READ</p><label class="sr-only" for="searchInput" data-i18n="searchLabel">책 또는 작가 검색</label><input id="searchInput" type="search" placeholder="찾고 싶은 책이나 작가를 검색해 보세요" data-i18n-placeholder="searchPlaceholder" autocomplete="off" /><p class="search-hint" data-i18n="popularSearches">인기 검색어 · 맡겨진 소녀 · 모순 · 데미안</p><div class="search-results" id="searchResults" role="status" aria-live="polite"></div></div></div>
   <script src="script.js"></script>
 </body>
 </html>
