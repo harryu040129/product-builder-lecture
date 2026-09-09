@@ -22,26 +22,25 @@
       <div class="review-grid all-reviews-grid" id="allReviewsGrid"></div>
     </section>
     <section class="comments-section" aria-labelledby="commentsTitle">
-      <p class="eyebrow">JOIN THE CONVERSATION</p>
-      <h2 id="commentsTitle">감상에 댓글 남기기</h2>
-      <p>책을 읽으며 떠오른 생각을 자유롭게 나눠 주세요.</p>
-      <div id="disqus_thread"></div>
-      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <div class="comments-heading">
+        <span class="comments-mark" aria-hidden="true">“</span>
+        <div><p class="eyebrow">BETWEEN THE LINES</p>
+        <h2 id="commentsTitle">책 이야기는 계속돼요</h2>
+        <p>마음에 남은 문장도, 조금 다른 생각도 좋아요.</p></div>
+      </div>
+      <details class="comments-disclosure" id="commentsDisclosure">
+        <summary><span>함께 이야기 나누기 <small>댓글 읽고 남기기</small></span><span class="comments-toggle" aria-hidden="true">+</span></summary>
+        <div class="comments-body">
+          <p class="comments-note">서로의 감상을 존중하며, 편안하게 이야기를 나눠 주세요.</p>
+          <p id="commentsStatus" class="comments-status" role="status">댓글을 불러오는 중이에요…</p>
+          <div id="disqus_thread"></div>
+        </div>
+      </details>
+      <noscript>댓글을 읽고 남기려면 브라우저에서 JavaScript를 활성화해 주세요.</noscript>
     </section>
   </main>
   <footer><a class="logo" href="index.html"><span>page</span><i></i><span>note</span></a><p>Read slowly, live deeply.</p><p>© 2024 PAGE.NOTE</p></footer>
   <script src="reviews.js"></script>
-  <script>
-    var disqus_config = function () {
-      this.page.url = window.location.href.split('#')[0];
-      this.page.identifier = 'page-note-all-reviews';
-    };
-    (function() {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://productbuilder-xcgzswnvsg.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
-  </script>
+  <script src="comments.js"></script>
 </body>
 </html>

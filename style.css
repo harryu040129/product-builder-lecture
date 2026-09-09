@@ -665,18 +665,50 @@ body {
 .comments-section {
   max-width: 850px;
   margin: 85px auto 0;
-  padding: 48px;
-  background: #fffdf9;
+  padding: 40px;
+  background: var(--paper);
+  border: 1px solid #dedbd0;
+  border-radius: 20px;
 }
-.comments-section h2 {
-  margin: 0 0 10px;
-  font: 32px "DM Serif Display", "Noto Serif KR", serif;
+.comments-heading { display: flex; align-items: center; gap: 22px; }
+.comments-mark {
+  display: grid;
+  place-items: center;
+  flex: 0 0 56px;
+  height: 64px;
+  border-radius: 28px 28px 10px 10px;
+  background: #e7ebdf;
+  color: #536448;
+  font: 64px/1 "DM Serif Display", serif;
+  padding-top: 18px;
 }
-.comments-section > p {
-  margin: 0 0 30px;
-  color: #77766f;
-  font: 12px/1.7 "Noto Sans KR", sans-serif;
+.comments-heading .eyebrow { margin: 0 0 10px; color: #647258; font-size: 10px; letter-spacing: 2px; }
+.comments-section h2 { margin: 0; font-size: 25px; font-weight: 500; letter-spacing: -1px; }
+.comments-heading p:last-child { margin: 12px 0 0; color: var(--muted); font-size: 13px; line-height: 1.8; }
+.comments-disclosure { margin-top: 28px; border-top: 1px solid #dedbd0; }
+.comments-disclosure summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 23px 0 0;
+  list-style: none;
+  cursor: pointer;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 700;
 }
+.comments-disclosure summary::-webkit-details-marker { display: none; }
+.comments-disclosure summary small { display: block; margin-top: 6px; color: var(--muted); font-size: 11px; font-weight: 400; }
+.comments-toggle { display: grid; place-items: center; width: 36px; height: 36px; flex-shrink: 0; border-radius: 50%; background: var(--cream); font-size: 23px; font-weight: 400; }
+.comments-disclosure[open] .comments-toggle { transform: rotate(45deg); }
+.comments-disclosure summary:hover .comments-toggle { background: #e7ebdf; }
+.comments-disclosure summary:focus-visible { outline: 2px solid #647258; outline-offset: 6px; border-radius: 4px; }
+.comments-body { padding-top: 24px; }
+.comments-note, .comments-status { color: var(--muted); font-size: 12px; line-height: 1.8; margin: 0 0 24px; }
+/* Disqus samples the host's typography and text color when it loads. */
+#disqus_thread { color-scheme: light; color: var(--ink); font-family: Manrope, "Noto Sans KR", sans-serif; }
+.comments-status a { color: #536448; text-underline-offset: 3px; }
 footer {
   min-height: 120px;
   padding: 35px max(5vw, 42px);
@@ -900,7 +932,10 @@ footer p {
   .all-reviews-page { padding: 62px 22px 70px; }
   .reviews-page-heading h1 { font-size: 41px; }
   .all-reviews-grid { grid-template-columns: 1fr; }
-  .comments-section { margin-top: 60px; padding: 28px 22px; }
+  .comments-section { margin-top: 60px; padding: 26px 20px; border-radius: 16px; }
+  .comments-heading { gap: 14px; align-items: flex-start; }
+  .comments-mark { flex-basis: 40px; height: 48px; font-size: 48px; }
+  .comments-section h2 { font-size: 21px; }
   .write-intro h2 {
     font-size: 39px;
   }
